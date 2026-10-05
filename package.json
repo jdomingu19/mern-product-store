@@ -1,0 +1,26 @@
+{
+  "name": "mern-product-store",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdomingu19/mern-product-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jdomingu19/mern-product-store/issues"
+  },
+  "homepage": "https://github.com/jdomingu19/mern-product-store#readme",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "express": "^4.19.2",
+    "mongoose": "^9.11.0"
+  }
+}
