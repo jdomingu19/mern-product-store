@@ -14,4 +14,8 @@ npm install express@4.19.2
 npm install mongoose dotenv
 ```
 
+```bash
+npm install nodemon -D
+```
+
 > Built with '\u{2665}' (♥) by Jesús Domínguez [@jdomingu19](https://github.com/jdomingu19/)
