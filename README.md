@@ -2,6 +2,8 @@
 
 ...
 
+## Root
+
 ```bash
 npm init -y
 ```
@@ -16,6 +18,32 @@ npm install mongoose dotenv
 
 ```bash
 npm install nodemon -D
+```
+
+## Frontend
+
+```bash
+cd frontend/
+```
+
+```bash
+npm create vite@latest .
+```
+
+```bash
+npm i @chakra-ui/react@2 @emotion/react @emotion/styled framer-motion
+```
+
+```bash
+npm i react-router-dom
+```
+
+```bash
+npm i react-icons
+```
+
+```bash
+npm i @chakra-ui/icons
 ```
 
 > Built with '\u{2665}' (♥) by Jesús Domínguez [@jdomingu19](https://github.com/jdomingu19/)
