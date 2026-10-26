@@ -20,6 +20,10 @@ npm install mongoose dotenv
 npm install nodemon -D
 ```
 
+```bash
+npm install cross-env
+```
+
 ## Frontend
 
 ```bash
