@@ -4,7 +4,8 @@ A modern **full-stack MERN application** built to manage products through a clea
 
 The application provides a complete **CRUD workflow** for products, allowing users to create, browse, update, and delete items in real time. It integrates **MongoDB**, **Express**, **React**, **Node.js**, **Zustand**, and **Chakra UI** to deliver a modern developer and user experience.
 
-> Add your application screenshot or deployment URL here.
+<img width="1281" height="644" alt="image" src="https://github.com/user-attachments/assets/345a436c-86b3-42d2-a562-cb0c6ecd4fe5" />
+
 
 ## Tech Stack ⚙️
 
