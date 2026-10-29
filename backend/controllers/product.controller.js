@@ -2,11 +2,14 @@
 // Web Development Bootcamp @burakorkmez
 // Backend -> product.controller.js
 
+// Product data model
 import Product from "../models/product.model.js";
 
 import mongoose from "mongoose";
 
-// ?
+/**
+ * Retrieves all products.
+ */
 export const getProducts = async (_, res) => {
   try {
     const products = await Product.find({});
@@ -17,7 +20,9 @@ export const getProducts = async (_, res) => {
   }
 };
 
-// ?
+/**
+ * Creates a new product.
+ */
 export const createProduct = async (req, res) => {
   const product = req.body;
 
@@ -38,7 +43,9 @@ export const createProduct = async (req, res) => {
   }
 };
 
-// ?
+/**
+ * Updates an existing product.
+ */
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
 
@@ -61,7 +68,9 @@ export const updateProduct = async (req, res) => {
   }
 };
 
-// ?
+/**
+ * Deletes a product by ID.
+ */
 export const deleteProduct = async (req, res) => {
   const { id } = req.params;
 

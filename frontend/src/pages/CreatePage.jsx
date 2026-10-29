@@ -2,8 +2,10 @@
 // Web Development Bootcamp @burakorkmez
 // Frontend -> CreatePage.jsx
 
+// React Built-in Hooks
 import { useState } from "react";
 
+// Chakra UI components
 import {
   Box,
   Button,
@@ -15,20 +17,29 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
+// Global product store
 import { useProductStore } from "../store/product.js";
 
-// ?
+/**
+ * Product creation page.
+ */
 const CreatePage = () => {
+  // Form state
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
     image: "",
   });
 
+  // React hook to show toasts
   const toast = useToast();
 
+  // Global product store method
   const { createProduct } = useProductStore();
 
+  /**
+   * Creates a new product.
+   */
   const handleAddProduct = async () => {
     const { success, message } = await createProduct(newProduct);
     if (!success) {
@@ -52,10 +63,12 @@ const CreatePage = () => {
   return (
     <Container maxW={"container.sm"}>
       <VStack spacing={8}>
+        {/* Page heading */}
         <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
           Create New Product
         </Heading>
 
+        {/* Product form */}
         <Box
           w={"full"}
           bg={useColorModeValue("white", "gray.800")}
@@ -64,6 +77,7 @@ const CreatePage = () => {
           shadow={"md"}
         >
           <VStack spacing={4}>
+            {/* Product form */}
             <Input
               placeholder="Product Name"
               name="name"
@@ -73,6 +87,7 @@ const CreatePage = () => {
               }
             />
 
+            {/* Product price input */}
             <Input
               placeholder="Price"
               name="price"
@@ -83,6 +98,7 @@ const CreatePage = () => {
               }
             />
 
+            {/* Product image input */}
             <Input
               placeholder="Image URL"
               name="image"
@@ -92,6 +108,7 @@ const CreatePage = () => {
               }
             />
 
+            {/* Submit button */}
             <Button colorScheme="blue" onClick={handleAddProduct} w="full">
               Add Product
             </Button>
@@ -102,5 +119,5 @@ const CreatePage = () => {
   );
 };
 
-// ?
+// Export create page component
 export default CreatePage;

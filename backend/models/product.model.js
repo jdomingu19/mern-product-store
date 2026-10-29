@@ -2,8 +2,10 @@
 // Web Development Bootcamp @burakorkmez
 // Backend -> product.model.js
 
+// MongoDB ODM library
 import mongoose from "mongoose";
 
+// Product schema definition
 const productSchema = new mongoose.Schema(
   {
     name: {
@@ -24,6 +26,8 @@ const productSchema = new mongoose.Schema(
   },
 );
 
+// Product model
 const Product = mongoose.model("Product", productSchema);
 
+// Export product model
 export default Product;

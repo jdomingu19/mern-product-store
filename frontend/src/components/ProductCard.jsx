@@ -2,6 +2,7 @@
 // Web Development Bootcamp @burakorkmez
 // Frontend -> ProductCard.jsx
 
+// Chakra UI components
 import {
   Box,
   Button,
@@ -24,20 +25,30 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
+// Product action icons
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
+
+// Custom Product Hook
 import { useProductStore } from "../store/product";
+
+// React Built-in Hook
 import { useState } from "react";
 
-// ?
+/**
+ * Displays product information and actions.
+ */
 export const ProductCard = ({ product }) => {
+  // Local state for product updates
   const [updatedProduct, setUpdatedProduct] = useState(product);
-
   const textColor = useColorModeValue("gray.600", "gray.200");
   const bgColor = useColorModeValue("white", "gray.800");
   const { deleteProduct, updateProduct } = useProductStore();
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  /**
+   * Deletes the selected product.
+   */
   const handleDeleteProduct = async (productID) => {
     const { success, message } = await deleteProduct(productID);
 
@@ -60,6 +71,9 @@ export const ProductCard = ({ product }) => {
     }
   };
 
+  /**
+   * Updates the selected product.
+   */
   const handleUpdateProduct = async (productID, updatedProduct) => {
     const { success, message } = await updateProduct(productID, updatedProduct);
     onClose();
@@ -91,6 +105,7 @@ export const ProductCard = ({ product }) => {
       _hover={{ transform: "translateY(-5px)", shadow: "xl" }}
       bg={bgColor}
     >
+      {/* Product image */}
       <Image
         src={product.image}
         alt={product.name}
@@ -99,6 +114,7 @@ export const ProductCard = ({ product }) => {
         objectFit={"cover"}
       />
 
+      {/* Product details and actions */}
       <Box p={4}>
         <Heading as={"h3"} size={"md"} mb={2}>
           {product.name}
@@ -122,7 +138,7 @@ export const ProductCard = ({ product }) => {
         </HStack>
       </Box>
 
-      {/* ? */}
+      {/* Product update modal */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -181,4 +197,5 @@ export const ProductCard = ({ product }) => {
   );
 };
 
+// Export product card component
 export default ProductCard;

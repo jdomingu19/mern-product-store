@@ -2,6 +2,7 @@
 // Web Development Bootcamp @burakorkmez
 // Frontend -> Navbar.jsx
 
+// Chakra UI components
 import {
   Button,
   Container,
@@ -11,15 +12,20 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 
+// React Router
 import { Link } from "react-router-dom";
 
+// Chakra UI Icons
 import { PlusSquareIcon } from "@chakra-ui/icons";
 
+// React Icons
 import { IoMoon } from "react-icons/io5";
 
 import { LuSun } from "react-icons/lu";
 
-// ?
+/**
+ * Application navigation bar.
+ */
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -34,6 +40,7 @@ const Navbar = () => {
           sm: "row",
         }}
       >
+        {/* Application logo and home navigation */}
         <Text
           fontSize={{ base: "22", sm: 28 }}
           fontWeight={"bold"}
@@ -45,6 +52,7 @@ const Navbar = () => {
           <Link to={"/"}>Product Store 🛒</Link>
         </Text>
 
+        {/* Navigation actions */}
         <HStack spacing={2} alignItems={"center"}>
           <Link to={"/create"}>
             <Button>
@@ -60,5 +68,5 @@ const Navbar = () => {
   );
 };
 
-// ?
+// Export navbar component
 export default Navbar;
